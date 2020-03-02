@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="/styles/style.css">
     <title>Fueled Shopping Cart</title>
 </head>
+
 <body>
-    
+
     <header>
         <div class="headerContent wrapper">
             <h1>Order<span>form</span></h1>
@@ -20,7 +22,7 @@
         <section class="cart">
             <div class="cartHead wrapper">
                 <h2>Your Cart</h2>
-                <span>Home  <i class="fas fa-arrow-right"></i>  Checkout</span>
+                <span>Home <i class="fas fa-arrow-right"></i> Checkout</span>
             </div>
             <div class="cartItems">
                 <div class="cartItemsContent wrapper">
@@ -30,6 +32,36 @@
                         <li>Quantity</li>
                         <li>Remove</li>
                     </ul>
+                </div>
+                <div class="itemOne item wrapper">
+                    
+                    <ul>
+                            <li>
+                                <div class="itemOneName itemName">
+                                    <div class="itemOneImage itemImage">
+                                        <img src="/assets/jetSki.png" alt="Blue Jet Ski product in cart">
+                                    </div>
+                                    <div class="itemOneTitle itemTitle">
+
+                                        <p>Jet Ski</p>
+                                        <span>434556256</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                $1,500
+                            </li>
+                            <li>
+                                <input type="text" name="itemOne" id="itemOne" size="1">
+                                <label for="itemOne" class="visuallyHidden">Enter quantity</label>
+                                <a href="#">Update</a>
+                            </li>
+                            <li><i class="far fa-times-circle fa-2x"></i></li>
+                        
+
+                    </ul>
+
+
                 </div>
             </div>
         </section>
@@ -41,4 +73,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

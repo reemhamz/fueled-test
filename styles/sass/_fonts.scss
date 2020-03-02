@@ -12,8 +12,6 @@ a {
     color: $white;
 }
 
-
-
 header{
 
     h1{
@@ -41,6 +39,9 @@ span, ul, li{
     font-size: 1.6rem;
 }
 
+ul{
+    display: flex;
+}
 ul, li{
     text-decoration: none;
     list-style: none;
