@@ -1,0 +1,48 @@
+.checkout{
+    padding: 5% 0;
+    display: flex;
+    justify-content: space-between;
+    .comments{
+        width: 30%;
+        h3{
+            padding-bottom: 4%;
+        }
+    textarea{
+        background: $black;
+        border-radius: 6px;
+        resize: none;
+        border: none;
+        padding: 2%;
+        color: $lightGrey;
+    }
+}
+.deliveryInfo{
+    width: 30%;
+    h3{
+        padding-bottom: 4%;
+    }
+    p{
+        color: $lightGrey;
+    }
+}
+
+.checkoutPay{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .receipt{
+        display: flex;
+        flex-direction: column;
+        .subTotal, .addedTax, .total{
+            display: flex;
+            justify-content: space-between;
+            padding: 2% ;
+        }
+    }
+    .total{
+        background: $black;
+        border-radius: 6px;
+    }
+}
+}

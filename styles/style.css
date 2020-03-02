@@ -193,6 +193,11 @@ a {
   color: #fff;
 }
 
+label, textarea, form, input {
+  color: #fff;
+  font-size: 1.6rem;
+}
+
 header h1 {
   text-transform: uppercase;
   font-weight: 300;
@@ -210,11 +215,21 @@ h2 {
   font-weight: 400;
 }
 
-p {
+h3 {
   font-size: 2rem;
+  font-weight: 400;
 }
 
-span, ul, li {
+h4 {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+span, ul, li, label {
   font-size: 1.6rem;
 }
 
@@ -227,6 +242,17 @@ ul {
 ul, li {
   text-decoration: none;
   list-style: none;
+}
+
+button {
+  font-size: 1.8rem;
+  background: #AE0000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
 }
 
 header {
@@ -256,19 +282,14 @@ header .headerContent {
   padding: 5% 0;
 }
 
-.cartHead span {
+.cartHead p {
   height: 47px;
   background: #0B0B0B;
   padding: 15px;
   border-radius: 6px;
 }
 
-.cartItems img {
-  border-radius: 6px;
-  display: inline-block;
-}
-
-.cartItems .cartBar {
+.cartBar {
   background: #0B0B0B;
   padding: 15px;
   border-radius: 6px;
@@ -279,7 +300,8 @@ header .headerContent {
       justify-content: space-around;
 }
 
-.cartItems .item ul {
+.item ul {
+  margin: 2% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -292,7 +314,15 @@ header .headerContent {
           align-items: center;
 }
 
-.cartItems .item .itemName {
+.item ul .price {
+  width: 60px;
+}
+
+.item ul p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.item .itemName {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -305,6 +335,116 @@ header .headerContent {
           justify-content: space-between;
 }
 
+.item .itemName img {
+  border-radius: 6px;
+  display: block;
+}
+
+.item input {
+  background: #0B0B0B;
+  color: #fff;
+  border: none;
+  text-align: center;
+  border-radius: 6px;
+  height: 50px;
+  width: 50px;
+}
+
+.itemTwo {
+  background: #0B0B0B;
+  border-radius: 6px;
+}
+
+.itemTwo input {
+  background: #2C2C2C;
+}
+
+.item i {
+  cursor: pointer;
+}
+
+.item i:hover {
+  color: #AE0000;
+}
+
+.checkout {
+  padding: 5% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkout .comments {
+  width: 30%;
+}
+
+.checkout .comments h3 {
+  padding-bottom: 4%;
+}
+
+.checkout .comments textarea {
+  background: #0B0B0B;
+  border-radius: 6px;
+  resize: none;
+  border: none;
+  padding: 2%;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.checkout .deliveryInfo {
+  width: 30%;
+}
+
+.checkout .deliveryInfo h3 {
+  padding-bottom: 4%;
+}
+
+.checkout .deliveryInfo p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.checkout .checkoutPay {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkout .checkoutPay .receipt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.checkout .checkoutPay .receipt .subTotal, .checkout .checkoutPay .receipt .addedTax, .checkout .checkoutPay .receipt .total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2%;
+}
+
+.checkout .checkoutPay .total {
+  background: #0B0B0B;
+  border-radius: 6px;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -314,7 +454,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1240px;
+  max-width: 1380px;
   width: 90%;
   margin: 0 auto;
 }

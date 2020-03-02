@@ -3,7 +3,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 5% 0;
-        span{
+        p{
             height: 47px;
             background: $black;
             padding: 15px;
@@ -12,35 +12,64 @@
     }
 
 
-    .cartItems{
-        
-        img{
-            border-radius: 6px;
-            display: inline-block;
-            
+.cartBar{
+    background: $black;
+    padding: 15px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-around;
+}
+
+// Styling for items in cart
+.item{
+    ul{
+        margin: 2% 0;
+        display: flex;
+        justify-content: space-between;
+        width: 89%;
+        align-items: center;
+        .price{
+            width: 60px;
         }
-        .cartBar{
-            background: $black;
-            padding: 15px;
-            border-radius: 6px;
-            display: flex;
-            justify-content: space-around;
-        }
-        .item{
-            ul{
-                
-                display: flex;
-                justify-content: space-between;
-                width: 89%;
-                align-items: center;
-                
-            }
-            .itemName{
-                display: flex;
-                align-items: center;
-                width: 250px;
-                justify-content: space-between;
-            }
-            
+        p{
+            color: $lightGrey;
         }
     }
+    .itemName{
+        display: flex;
+        align-items: center;
+        width: 250px;
+        justify-content: space-between;
+        img{
+            border-radius: 6px;
+            display: block;
+        }
+    }
+    input{
+        background: $black;
+        color: $white;
+        border: none;
+        text-align: center;
+        border-radius: 6px;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.itemTwo{
+    background: $black;
+    border-radius: 6px;
+    input{
+        background: $darkGrey;
+    }
+}
+
+.item{
+
+    i{
+        cursor: pointer;
+        &:hover{
+            color: $red;
+        }
+    }
+}

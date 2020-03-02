@@ -4,12 +4,17 @@ h3, h4,
 h5, h6,
 figure,
 p,
-span,
+span, 
 a {
     padding: 0;
     margin: 0;
     font-family: "SF Pro Text"; 
     color: $white;
+}
+
+label, textarea, form, input{
+    color: $white;
+    font-size: 1.6rem;
 }
 
 header{
@@ -31,20 +36,42 @@ h2{
     font-weight: 400;
 }
 
-p{
+h3{
     font-size: 2rem;
+    font-weight: 400;
 }
 
-span, ul, li{
+h4{
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+p{
+    font-size: 1.6rem;
+}
+
+span, ul, li, label{
     font-size: 1.6rem;
 }
 
 ul{
     display: flex;
+
 }
 ul, li{
     text-decoration: none;
     list-style: none;
+}
+
+button{
+    font-size: 1.8rem;
+    background: $red;
+    color: $white;
+    border: none;
+    border-radius: 6px;
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
 }
 
 
