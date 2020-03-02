@@ -1,0 +1,9 @@
+header{
+    background: $red;
+    padding: 20px 0;
+    .headerContent{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+

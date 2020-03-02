@@ -1,3 +1,18 @@
+@import './setup';
+@import './colors';
+@import './fonts';
+@import './header';
+
+html{
+    font-size: 62.5%;
+}
+
+.wrapper{
+    max-width: 1280px;
+    width: 90%;
+    margin: 0 auto;
+}
+
 body{
-    background: wheat;
+    background: #2C2C2C;
 }
