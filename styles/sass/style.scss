@@ -2,17 +2,22 @@
 @import './colors';
 @import './fonts';
 @import './header';
+@import './cart';
+@import './checkout';
 
 html{
     font-size: 62.5%;
 }
 
+body{
+    background: $darkGrey;
+}
+
 .wrapper{
-    max-width: 1280px;
+    max-width: 1240px;
     width: 90%;
     margin: 0 auto;
 }
 
-body{
-    background: #2C2C2C;
-}
+
+

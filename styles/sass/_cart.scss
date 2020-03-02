@@ -1,0 +1,25 @@
+.cartHead{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5% 0;
+        span{
+            height: 47px;
+            background: $black;
+            padding: 15px;
+            border-radius: 6px;
+        }
+    }
+
+.cartBar{
+    background: $black;
+    padding: 15px;
+    border-radius: 6px;
+    ul{
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    
+}
