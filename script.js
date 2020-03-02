@@ -2,20 +2,17 @@
 const cart = {};
 
 // Collect user input
-app.collectInfo = function () {};
-
-// Make AJAX request with user inputted data
-app.getInfo = function () {};
+cart.collectInfo = function () {};
 
 // Display data on the page
-app.displayInfo = function () {};
+cart.displayInfo = function () {};
 
 // start cart application
-app.init = function () {
-    app.collectInfo();
-
+cart.init = function () {
+    cart.collectInfo();
+alert("this works!")
 };
 // document ready function
 document.addEventListener("DOMContentLoaded", function () {
-    app.init();
+    cart.init();
 });

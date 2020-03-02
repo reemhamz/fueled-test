@@ -203,11 +203,23 @@ header h1 {
   font-weight: 300;
   letter-spacing: 0.09em;
   font-size: 1.8rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 header h1 span {
   font-weight: 900;
   font-weight: 1.8rem;
+}
+
+header #quantity {
+  background: #fff;
+  color: #0B0B0B;
+  padding: 5px;
+  border-radius: 100%;
+  text-align: center;
+  width: 30px;
 }
 
 h2 {
@@ -253,6 +265,22 @@ button {
   padding: 20px;
   width: 50%;
   margin: 0 auto;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #fff;
+  color: #AE0000;
+}
+
+a {
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #AE0000;
 }
 
 header {
@@ -267,6 +295,19 @@ header .headerContent {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+header .headerContent .cartQuantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cartHead {
@@ -361,6 +402,8 @@ header .headerContent {
 
 .item i {
   cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
 }
 
 .item i:hover {
