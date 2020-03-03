@@ -30,27 +30,12 @@ cart.updateTotal = function () {
         let itemQty = itemRow.getElementsByClassName("itemQty")[0].value
         totalPrice = totalPrice + (itemPrice * itemQty);
 
-
         // function to update quantity in the input field
         function updateQty() {
-            const inputArray = []
-            const qtyInput = document.getElementsByClassName("itemQty")
+            
+            let qtyInput = document.getElementsByClassName("itemQty")
             for (let i = 0; i < qtyInput.length; i++) {
-
-                // Updates cart quantity at the top of the page to reflect how many items are in the cart
                 const input = qtyInput[i]
-                inputArray.push(parseInt(input.value))
-
-                const inputSum = inputArray.reduce(function (a, b) {
-                    return a + b
-                }, 0)
-                
-                if (totalPrice == 0) {
-                    itemQty = 0;
-                    inputSum = 0;
-                }
-                document.getElementById("quantity").innerText = inputSum;
-
 
                 input.addEventListener('change', qtyUpdated)
             }
@@ -61,7 +46,7 @@ cart.updateTotal = function () {
                     alert('Please put any number above 0')
                 }
                 // removes item if quantity is 0
-                else if (e.target.value == 0) {
+                else if (e.target.value === 0) {
                     e.target.parentElement.parentElement.parentElement.remove()
                 }
                 cart.updateTotal();
@@ -72,9 +57,37 @@ cart.updateTotal = function () {
     const totalCheckout = document.getElementsByClassName("subTotalPrice")[0].innerText = `$${totalPrice.toLocaleString()}`;
     document.getElementsByClassName("totalPrice")[0].innerText = totalCheckout
 
+    
+    if (totalPrice === 0){
+        document.getElementById("quantity").innerText = 0
+    }
 
 
+    // Updates cart quantity at the top of the page to reflect how many items are in the cart
+    const inputArray = []
+    let qtyInput = document.getElementsByClassName("itemQty")
+    for (let i = 0; i < qtyInput.length; i++) {
+
+        const input = qtyInput[i]
+        inputArray.push(parseInt(input.value))
+
+        const inputSum = inputArray.reduce(function (a, b) {
+            return a + b
+        }, 0)
+        let cartQty = document.getElementById("quantity").innerText = inputSum;
+        
+        if (totalPrice === 0) {
+            itemQty = 0;
+            inputSum = 0;
+            console.log('hiiiii')
+        }
+        // console.log(totalPrice)
+        document.getElementById("quantity").innerText = inputSum;
+
+    }
+    
 }
+
 
 cart.submitOrder = function () {
     const cartTotal = document.getElementById("quantity").innerText
@@ -84,8 +97,12 @@ cart.submitOrder = function () {
             e.preventDefault();
             if (cartTotal <= 0) {
                 alert("There is nothing in your cart!")
+            } else {
+                alert('thanks for your purchase')
+                console.log(document.getElementsByClassName("item"));
             }
         })
+        console.log(document.getElementById("quantity"))
 
     }
     clickSubmit();
