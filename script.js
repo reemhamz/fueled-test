@@ -5,23 +5,14 @@ const cart = {};
 cart.removeItems = function () {
     const removeButton = document.getElementsByClassName("remove");
 
-
     for (let i = 0; i < removeButton.length; i++) {
-
         removeButton[i].addEventListener('click', function (e) {
             const removeButtonClicked = e.target;
-
             removeButtonClicked.parentElement.parentElement.parentElement.remove()
-
             cart.updateTotal();
-            cart.submitOrder();
         })
     }
-
-
 }
-
-
 
 // Function containing math and document queries to update the DOM to show the quantities of items the user would like and how much the total cost would be
 cart.updateTotal = function () {
@@ -45,12 +36,15 @@ cart.updateTotal = function () {
             }
             // alerts user to only put numbers over 0 and resets to the quantity of 1
             function qtyUpdated(e) {
-                if (isNaN(e.target.value) || e.target.value < 0) {
+                console.log(e.target)
+                if (isNaN(e.target.value) || e.target.value < 0 || e.target.value === -0) {
                     e.target.value = 1;
                     alert('Please put any number above 0')
                 }
-                // removes item if quantity is 0
+
+                // removes item from cart if quantity is 0
                 else if (e.target.value === 0) {
+                    console.log('i am 0')
                     e.target.parentElement.parentElement.parentElement.remove()
                 }
                 cart.updateTotal();
@@ -78,42 +72,27 @@ cart.updateTotal = function () {
         const inputSum = inputArray.reduce(function (a, b) {
             return a + b
         }, 0)
-        let cartQty = document.getElementById("quantity").innerText = inputSum;
-
-        if (totalPrice === 0) {
-            itemQty = 0;
-            inputSum = 0;
-            console.log('hiiiii')
-        }
-        // console.log(totalPrice)
         document.getElementById("quantity").innerText = inputSum;
-
     }
-
 }
 
-
+// function that handles the checkout button
 cart.submitOrder = function () {
-    const cartTotal = document.getElementById("quantity").innerText
-    console.log(cartTotal)
-
     const totalPrice = document.getElementsByClassName("totalPrice")[0].innerHTML;
 
     function clickSubmit() {
-        console.log(totalPrice)
 
         const submitClicked = document.getElementById("submit")
         submitClicked.addEventListener('click', function (e) {
             e.preventDefault();
 
-            const itemContainer = document.getElementsByClassName("cartItems")[0]
-            const itemRows = itemContainer.getElementsByClassName("item")
-
-            console.log(itemContainer)
-
+            const itemContainer = document.getElementsByClassName("cartItems")[0];
+            while (itemContainer.hasChildNodes()) {
+                itemContainer.removeChild(itemContainer.firstChild)
+            }
+            console.log("Your order has been placed")
+            cart.updateTotal();
         })
-
-
     }
     clickSubmit();
 }
