@@ -36,7 +36,7 @@ cart.updateTotal = function () {
             }
             // alerts user to only put numbers over 0 and resets to the quantity of 1
             function qtyUpdated(e) {
-                
+                // const inputAmount = e.target.value;
                 if (isNaN(e.target.value) || e.target.value < 0 || e.target.value === -0) {
                     e.target.value = 1;
                     alert('Please put any number above 0')
@@ -44,6 +44,10 @@ cart.updateTotal = function () {
                 // removes item from cart if quantity is 0
                 else if (e.target.value == 0) {
                     e.target.parentElement.parentElement.parentElement.remove()
+                }
+                // rounds input number to whole number is decimal
+                else if (e.target.value % 1 != 0) {
+                    e.target.value = parseInt(Math.round(e.target.value));
                 }
                 cart.updateTotal();
             }
