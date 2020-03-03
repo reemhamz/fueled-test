@@ -36,19 +36,18 @@ cart.updateTotal = function () {
             }
             // alerts user to only put numbers over 0 and resets to the quantity of 1
             function qtyUpdated(e) {
-                console.log(e.target)
+                
                 if (isNaN(e.target.value) || e.target.value < 0 || e.target.value === -0) {
                     e.target.value = 1;
                     alert('Please put any number above 0')
                 }
-
                 // removes item from cart if quantity is 0
-                else if (e.target.value === 0) {
-                    console.log('i am 0')
+                else if (e.target.value == 0) {
                     e.target.parentElement.parentElement.parentElement.remove()
                 }
                 cart.updateTotal();
             }
+
         }
         updateQty()
     }
