@@ -6,12 +6,14 @@ const cart = {};
 cart.removeItems = function () {
     const removeButton = document.getElementsByClassName("remove");
 
+    
+
     for (let i = 0; i < removeButton.length; i++) {
 
         removeButton[i].addEventListener('click', function (e) {
             const removeButtonClicked = e.target;
 
-            removeButtonClicked.parentElement.parentElement.parentElement.remove()
+            console.log(removeButtonClicked.parentElement.parentElement.parentElement)
 
             cart.updateTotal();
         })
@@ -21,15 +23,29 @@ cart.removeItems = function () {
 cart.updateQuantity = function () {
     qtyInput = document.getElementsByClassName("itemQty")
 
-    for (let i = 0; i < qtyInput.length; i++){
-        const input = qtyInput[i].value
-        console.log(input)
-        input.addEventListener('change', inputUpdated())
+    function qtyUpdated(e) {
+        if (isNaN(e.target.value) || e.target.value < 0) {
+            e.target.value = 1;
+        }
+        else if (e.target.value == 0) {
+            console.log('delete this')
+            
+
+            for (let i = 0; i < qtyInput.length; i++){
+                console.log(qtyInput[i].parentElement.parentElement.parentElement)
+            }
+
+        }
+        cart.updateTotal();
     }
 
-    function inputUpdated(e){
-        console.log(e.target)
+    for (let i = 0; i < qtyInput.length; i++) {
+        const input = qtyInput[i]
+        console.log(input)
+        input.addEventListener('change', qtyUpdated)
     }
+
+
 
 }
 
@@ -59,9 +75,9 @@ cart.updateTotal = function () {
 
 // start cart application
 cart.init = function () {
-    cart.updateQuantity();
     cart.updateTotal();
     cart.removeItems();
+    cart.updateQuantity();
 };
 
 // document ready function to make sure the DOM is loading
