@@ -17,42 +17,11 @@ cart.removeItems = function () {
     }
 }
 
-cart.updateQty = function () {
-    const qtyInput = document.getElementsByClassName("itemQty")
-    
 
-    for (let i = 0; i < qtyInput.length; i++) {
-        const input = qtyInput[i]
-
-        input.addEventListener('change', qtyUpdated)
-    }
-
-    // alerts user to only put numbers over 100 and resets to the quantity of 1
-    function qtyUpdated(e) {
-        if (isNaN(e.target.value) || e.target.value < 0) {
-            e.target.value = 1;
-            alert('Please put any number above 0')
-        }
-
-        // removes item if quantity is zero
-        else if (e.target.value == 0) {
-            e.target.parentElement.parentElement.parentElement.remove()
-
-        }
-        cart.updateTotal();
-    }
-
-    // Updates cart quantity at the top of the page to reflect how many items are in the cart
-    let cartQty = document.getElementById("quantity").innerText;
-    let itemQty = itemRow.getElementsByClassName("itemQty")[0].value
-    console.log(itemQty)
-    
-}
 
 // Function containing math and document queries to update the DOM to show the quantities of items the user would like and how much the total cost would be
 cart.updateTotal = function () {
     const itemContainer = document.getElementsByClassName("cartItems")[0]
-
     const itemRows = itemContainer.getElementsByClassName("item")
     let totalPrice = 0
     for (let i = 0; i < itemRows.length; i++) {
@@ -60,17 +29,71 @@ cart.updateTotal = function () {
         const itemPrice = parseInt(itemRow.getElementsByClassName("price")[0].innerText.replace('$', '').replace(',', ''));
         let itemQty = itemRow.getElementsByClassName("itemQty")[0].value
         totalPrice = totalPrice + (itemPrice * itemQty);
-        
+
+
+        // function to update quantity in the input field
+        function updateQty() {
+            const inputArray = []
+            const qtyInput = document.getElementsByClassName("itemQty")
+            for (let i = 0; i < qtyInput.length; i++) {
+
+                // Updates cart quantity at the top of the page to reflect how many items are in the cart
+                const input = qtyInput[i]
+                inputArray.push(parseInt(input.value))
+
+                const inputSum = inputArray.reduce(function (a, b) {
+                    return a + b
+                }, 0)
+
+
+                document.getElementById("quantity").innerText = inputSum;
+                console.log(itemQty)
+
+
+                input.addEventListener('change', qtyUpdated)
+            }
+            // alerts user to only put numbers over 0 and resets to the quantity of 1
+            function qtyUpdated(e) {
+                if (isNaN(e.target.value) || e.target.value < 0) {
+                    e.target.value = 1;
+                    alert('Please put any number above 0')
+                }
+                // removes item if quantity is 0
+                else if (e.target.value == 0) {
+                    e.target.parentElement.parentElement.parentElement.remove()
+                }
+                cart.updateTotal();
+            }
+        }
+        updateQty()
     }
     const totalCheckout = document.getElementsByClassName("subTotalPrice")[0].innerText = `$${totalPrice.toLocaleString()}`;
     document.getElementsByClassName("totalPrice")[0].innerText = totalCheckout
+
+
+
+}
+
+cart.submitOrder = function () {
+    const cartTotal = document.getElementById("quantity").innerText
+
+    function clickSubmit() {
+        const submitButton = document.getElementById("submit").addEventListener('click', function (e) {
+            e.preventDefault();
+            if (cartTotal <= 0) {
+                alert("There is nothing in your cart!")
+            }
+        })
+
+    }
+    clickSubmit();
 }
 
 // start cart application
 cart.init = function () {
     cart.updateTotal();
     cart.removeItems();
-    cart.updateQty();
+    cart.submitOrder();
 };
 
 // document ready function to make sure the DOM is loading
