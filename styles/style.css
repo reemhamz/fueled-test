@@ -433,7 +433,7 @@ header .headerContent .cartQuantity {
   border-radius: 6px;
   resize: none;
   border: none;
-  padding: 2%;
+  padding: 20px;
   color: rgba(255, 255, 255, 0.6);
 }
 
