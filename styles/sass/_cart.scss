@@ -24,10 +24,11 @@
 // Styling for items in cart
 .item{
     ul{
+        width: 89%;
         margin: 2% 0;
         display: flex;
         justify-content: space-between;
-        width: 89%;
+        // width: 89%;
         align-items: center;
         .price{
             width: 60px;

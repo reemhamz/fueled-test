@@ -5,6 +5,7 @@ const cart = {};
 cart.removeItems = function () {
     const removeButton = document.getElementsByClassName("remove");
 
+
     for (let i = 0; i < removeButton.length; i++) {
 
         removeButton[i].addEventListener('click', function (e) {
@@ -13,8 +14,11 @@ cart.removeItems = function () {
             removeButtonClicked.parentElement.parentElement.parentElement.remove()
 
             cart.updateTotal();
+            cart.submitOrder();
         })
     }
+
+
 }
 
 
@@ -32,7 +36,7 @@ cart.updateTotal = function () {
 
         // function to update quantity in the input field
         function updateQty() {
-            
+
             let qtyInput = document.getElementsByClassName("itemQty")
             for (let i = 0; i < qtyInput.length; i++) {
                 const input = qtyInput[i]
@@ -57,8 +61,8 @@ cart.updateTotal = function () {
     const totalCheckout = document.getElementsByClassName("subTotalPrice")[0].innerText = `$${totalPrice.toLocaleString()}`;
     document.getElementsByClassName("totalPrice")[0].innerText = totalCheckout
 
-    
-    if (totalPrice === 0){
+
+    if (totalPrice === 0) {
         document.getElementById("quantity").innerText = 0
     }
 
@@ -75,7 +79,7 @@ cart.updateTotal = function () {
             return a + b
         }, 0)
         let cartQty = document.getElementById("quantity").innerText = inputSum;
-        
+
         if (totalPrice === 0) {
             itemQty = 0;
             inputSum = 0;
@@ -85,24 +89,30 @@ cart.updateTotal = function () {
         document.getElementById("quantity").innerText = inputSum;
 
     }
-    
+
 }
 
 
 cart.submitOrder = function () {
     const cartTotal = document.getElementById("quantity").innerText
+    console.log(cartTotal)
+
+    const totalPrice = document.getElementsByClassName("totalPrice")[0].innerHTML;
 
     function clickSubmit() {
-        const submitButton = document.getElementById("submit").addEventListener('click', function (e) {
+        console.log(totalPrice)
+
+        const submitClicked = document.getElementById("submit")
+        submitClicked.addEventListener('click', function (e) {
             e.preventDefault();
-            if (cartTotal <= 0) {
-                alert("There is nothing in your cart!")
-            } else {
-                alert('thanks for your purchase')
-                console.log(document.getElementsByClassName("item"));
-            }
+
+            const itemContainer = document.getElementsByClassName("cartItems")[0]
+            const itemRows = itemContainer.getElementsByClassName("item")
+
+            console.log(itemContainer)
+
         })
-        console.log(document.getElementById("quantity"))
+
 
     }
     clickSubmit();
