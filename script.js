@@ -1,29 +1,8 @@
-// Create cart namespace to hold all methods
+// Create cart namespace to hold all methods running inside it
 const cart = {};
 
-// Collect user input
-cart.collectInfo = function () {
 
-    const selectedProducts = [{
-            product: "Jet Ski",
-            price: 1500,
-            qty: 1
-        },
-        {
-            product: "Bubble Wrap",
-            price: 440,
-            qty: 1
-        },
-        {
-            product: "Crock-Pot",
-            price: 55,
-            qty: 1
-        }
-    ]
-};
-
-
-// Function that removes items from the carts based on a click event listener. This will also later show the remaining total price even after items have been removed
+// Function that removes items from the cart based on a click event listener. This will also later show the remaining total price even after items have been removed
 cart.removeItems = function () {
     const removeButton = document.getElementsByClassName("remove");
 
@@ -40,10 +19,18 @@ cart.removeItems = function () {
 }
 
 cart.updateQuantity = function () {
-    document.getElementsByClassName("updateQty").addEventListener("click", function (e) {
-        e.preventDefault();
+    qtyInput = document.getElementsByClassName("itemQty")
 
-    })
+    for (let i = 0; i < qtyInput.length; i++){
+        const input = qtyInput[i].value
+        console.log(input)
+        input.addEventListener('change', inputUpdated())
+    }
+
+    function inputUpdated(e){
+        console.log(e.target)
+    }
+
 }
 
 // Function containing math and document queries to update the DOM to show the quantities of items the user would like and how much the total cost would be
@@ -51,27 +38,33 @@ cart.updateTotal = function () {
     const itemContainer = document.getElementsByClassName("cartItems")[0]
 
     const itemRows = itemContainer.getElementsByClassName("item")
-
+    let totalPrice = 0
     for (let i = 0; i < itemRows.length; i++) {
         const itemRow = itemRows[i];
-        const itemPrice = parseInt(itemRow.getElementsByClassName("price")[0].innerText.replace('$','').replace(',',''));
-        const itemQuantity = itemRow.getElementsByClassName("itemQty")[0].value
+        const itemPrice = parseInt(itemRow.getElementsByClassName("price")[0].innerText.replace('$', '').replace(',', ''));
+        const itemQty = itemRow.getElementsByClassName("itemQty")[0].value
 
-        
-        const totalPrice = itemPrice * itemQuantity
-        console.log(totalPrice)
+
+        totalPrice = totalPrice + (itemPrice * itemQty);
+
     }
 
+    const totalCheckout = document.getElementsByClassName("subTotalPrice")[0].innerText = `$${totalPrice.toLocaleString()}`;
+
+    document.getElementsByClassName("totalPrice")[0].innerText = totalCheckout
+
+    console.log(totalCheckout)
 }
 
 
 // start cart application
 cart.init = function () {
-    cart.collectInfo();
+    cart.updateQuantity();
     cart.updateTotal();
     cart.removeItems();
 };
-// document ready function
+
+// document ready function to make sure the DOM is loading
 document.addEventListener("DOMContentLoaded", function () {
     cart.init();
 });
