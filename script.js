@@ -44,10 +44,12 @@ cart.updateTotal = function () {
                 const inputSum = inputArray.reduce(function (a, b) {
                     return a + b
                 }, 0)
-
-
+                
+                if (totalPrice == 0) {
+                    itemQty = 0;
+                    inputSum = 0;
+                }
                 document.getElementById("quantity").innerText = inputSum;
-                console.log(itemQty)
 
 
                 input.addEventListener('change', qtyUpdated)
