@@ -21,3 +21,5 @@ Since this is a simple project, it is very simple to install -
 - Once you ``cd`` into your desired folder, write ``git clone https://github.com/reemhamz/fueled-test/``
 - This should glone and download the repo into your folder.
 - Go into the repo folder that has just been cloned and open up ``index.html``
+
+To view the project online, go to https://reemhamz.github.io/fueled-test/
