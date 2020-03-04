@@ -18,8 +18,8 @@ cart.removeItems = function () {
 
 
         removeButton[i].addEventListener('keypress', function (e) {
-            console.log(e);
-                if (e.key == "Enter") {
+            
+                if (e.key == "Enter" || e.keyCode == 13) {
                     e.preventDefault();
 
                     removeButtonClicked = e.target;
