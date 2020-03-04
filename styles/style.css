@@ -193,16 +193,26 @@ a {
   color: #fff;
 }
 
+p, span, ul, li, label, h4 {
+  font-size: 1.6rem;
+}
+
+@media (max-width: 900px) {
+  p, span, ul, li, label, h4 {
+    font-size: 1.4rem;
+  }
+}
+
 label, textarea, form, input {
   color: #fff;
   font-size: 1.6rem;
 }
 
 header h1 {
+  font-size: 1.8rem !important;
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 0.09em;
-  font-size: 1.8rem;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -210,7 +220,7 @@ header h1 {
 
 header h1 span {
   font-weight: 900;
-  font-weight: 1.8rem;
+  font-size: 1.8rem;
 }
 
 header #quantity {
@@ -242,16 +252,6 @@ h4 {
   font-weight: 400;
 }
 
-p, span, ul, li, label, h4 {
-  font-size: 1.6rem;
-}
-
-@media (max-width: 900px) {
-  p, span, ul, li, label, h4 {
-    font-size: 1.4rem;
-  }
-}
-
 ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -269,7 +269,7 @@ button {
   color: #fff;
   border: none;
   border-radius: 6px;
-  padding: 20px;
+  padding: 15px;
   width: 50%;
   margin: 0 auto;
   -webkit-transition: 0.2s;
@@ -315,6 +315,19 @@ header .headerContent .cartQuantity {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 430px) {
+  header .headerContent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 8vh;
+  }
 }
 
 .cartHead {
@@ -540,6 +553,7 @@ header .headerContent .cartQuantity {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  text-align: center;
 }
 
 .checkoutPay .receipt {
