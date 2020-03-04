@@ -3,7 +3,7 @@ const cart = {};
 
 // Function that removes items from the cart based on a click event listener. This will also later show the remaining total price even after items have been removed
 cart.removeItems = function () {
-    const removeButton = document.getElementsByClassName("removeAnchor");
+    const removeButton = document.getElementsByClassName("remove");
 
     for (let i = 0; i < removeButton.length; i++) {
         removeButton[i].addEventListener('click', function (e) {
@@ -11,15 +11,15 @@ cart.removeItems = function () {
             e.preventDefault();
             removeButtonClicked = e.target;
 
-            removeButtonClicked.parentElement.parentElement.parentElement.parentElement.remove();
+            removeButtonClicked.parentElement.parentElement.parentElement.remove();
 
             cart.updateTotal();
         })
 
 
-
         removeButton[i].addEventListener('keypress', function (e) {
-                if (e.keyCode == 13) {
+            console.log(e);
+                if (e.key == "Enter") {
                     e.preventDefault();
 
                     removeButtonClicked = e.target;
