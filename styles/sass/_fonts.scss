@@ -84,7 +84,7 @@ button{
     width: 50%;
     margin: 0 auto;
     transition: 0.2s;
-    &:hover{
+    &:hover, &:focus{
         background: $white;
         color: $red;
     }
@@ -92,7 +92,7 @@ button{
 
 a{
     transition: 0.2s;
-    &:hover{
+    &:hover, &:focus{
         color: $red;
     }
 }

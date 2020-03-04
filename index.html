@@ -27,108 +27,125 @@
                 <h2>Your Cart</h2>
                 <p>Home <i class="fas fa-arrow-right"></i> Checkout</p>
             </div>
-            <div class="cartItemsContent wrapper">
-                <ul class="cartBar">
+            <div class="cartBar wrapper">
+                <ul class="cartBarContent">
                     <li>Product Name</li>
                     <li>Price</li>
                     <li>Quantity</li>
                     <li>Remove</li>
                 </ul>
-            
-            <div class="cartItems">
 
-                <!-- Item one: Jet ski -->
-                <div class="itemOne item">
+                <div class="cartItems">
 
-                    <ul>
-                        <li>
+                    <!-- Item one: Jet ski -->
+                    <div class="itemOne item">
 
-                            <div class="itemOneName itemName">
+                        <ul>
+                            <li>
 
-                                <div class="itemOneImage itemImage">
-                                    <img src="/assets/jetSki.png" alt="Blue Jet Ski product">
+                                <div class="itemOneName itemName">
+
+                                    <div class="itemOneImage itemImage">
+                                        <img src="/assets/jetSki.png" alt="Blue Jet Ski product">
+                                    </div>
+
+                                    <div class="itemOneTitle itemTitle">
+
+                                        <h3>Jet Ski</h3>
+                                        <p>434556256</p>
+                                    </div>
                                 </div>
 
-                                <div class="itemOneTitle itemTitle">
-
-                                    <h3>Jet Ski</h3>
-                                    <p>434556256</p>
-                                </div>
-                            </div>
-
-                        </li>
-                        <li class="price itemOnePrice">
-                            $1,500
-                        </li>
-                        <li>
-                            <input type="text" name="itemOne" id="itemOne" size="1" value="1" class="itemOneQty itemQty">
-                            <label for="itemOne" class="visuallyHidden">Enter quantity</label>
-                            <a href="#" class="updateQty">Update</a>
-                        </li>
-                        <li><i class="far fa-times-circle fa-2x remove"></i></li>
-                    </ul>
-                </div>
+                            </li>
+                            <li class="price itemOnePrice">
+                                $1,500
+                            </li>
+                            <li>
+                                <input type="text" name="itemOne" id="itemOne" size="1" value="1"
+                                    class="itemOneQty itemQty">
+                                <label for="itemOne" class="visuallyHidden">Enter quantity</label>
+                                <a href="#" class="updateQty">Update</a>
+                            </li>
+                            <li>
+                                <a href="" class="removeAnchor">
+                                    <i tabindex="0" class="far fa-times-circle fa-2x remove"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
 
-                <!-- Item two: Bubble wrap -->
-                <div class="itemTwo item">
-                    <ul>
-                        <li>
-                            <div class="itemTwoName itemName">
+                    <!-- Item two: Bubble wrap -->
+                    <div class="itemTwo item">
+                        <ul>
+                            <li>
+                                <div class="itemTwoName itemName">
 
-                                <div class="itemTwoImage itemImage">
-                                    <img src="/assets/bubbleWrap.png" alt="Bubble wrap product">
-                                </div>
+                                    <div class="itemTwoImage itemImage">
+                                        <img src="/assets/bubbleWrap.png" alt="Bubble wrap product">
+                                    </div>
 
-                                <div class="itemTwoTitle itemTitle">
+                                    <div class="itemTwoTitle itemTitle">
 
-                                    <h3>Bubble Wrap</h3>
-                                    <p>345245865</p>
-                                </div>
-                            </div>
-
-                        </li>
-                        <li class=" itemTwoPrice price">
-                            $440
-                        </li>
-                        <li>
-                            <input type="text" name="itemTwo" id="itemTwo" size="1" value="1" class="itemTwoQty itemQty">
-                            <label for="itemTwo" class="visuallyHidden">Enter quantity</label>
-                            <a href="#" class="updateQty">Update</a>
-                        </li>
-                        <li><i class="far fa-times-circle fa-2x remove"></i></li>
-                    </ul>
-                </div>
-
-                <!-- Item three: Crock-pot -->
-                <div class="itemThree item">
-                    <ul>
-                        <li>
-                            <div class="itemThreeName itemName">
-
-                                <div class="itemThreeImage itemImage">
-                                    <img src="/assets/crockPot.png" alt="Crock-pot product">
+                                        <h3>Bubble Wrap</h3>
+                                        <p>345245865</p>
+                                    </div>
                                 </div>
 
-                                <div class="itemThreeTitle itemTitle">
+                            </li>
+                            <li class=" itemTwoPrice price">
+                                $440
+                            </li>
+                            <li>
+                                <input type="text" name="itemTwo" id="itemTwo" size="1" value="1"
+                                    class="itemTwoQty itemQty">
+                                <label for="itemTwo" class="visuallyHidden">Enter quantity</label>
+                                <a href="#" class="updateQty">Update</a>
+                            </li>
+                            <li>
+                                <a href="" class="removeAnchor">
+                                    <i tabindex="0" class="far fa-times-circle fa-2x remove"></i>
+                                </a>
 
-                                    <h3>Crock-Pot</h3>
-                                    <p>987123654</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Item three: Crock-pot -->
+                    <div class="itemThree item">
+                        <ul>
+                            <li>
+                                <div class="itemThreeName itemName">
+
+                                    <div class="itemThreeImage itemImage">
+                                        <img src="/assets/crockPot.png" alt="Crock-pot product">
+                                    </div>
+
+                                    <div class="itemThreeTitle itemTitle">
+
+                                        <h3>Crock-Pot</h3>
+                                        <p>987123654</p>
+                                    </div>
                                 </div>
-                            </div>
 
-                        </li>
-                        <li class="price itemThreePrice">
-                            $55
-                        </li>
-                        <li>
-                            <input type="text" name="itemThree" id="itemThree" size="1" value="1" class = "itemThreeQty itemQty">
-                            <label for="itemThree" class="visuallyHidden">Enter quantity</label>
-                            <a href="#" class="updateQty">Update</a>
-                        </li>
-                        <li><i class="far fa-times-circle fa-2x remove"></i></li>
-                    </ul>
-                </div>
+                            </li>
+                            <li class="price itemThreePrice">
+                                $55
+                            </li>
+                            <li>
+                                <input type="text" name="itemThree" id="itemThree" size="1" value="1"
+                                    class="itemThreeQty itemQty">
+                                <label for="itemThree" class="visuallyHidden">Enter quantity</label>
+                                <a href="#" class="updateQty">Update</a>
+                            </li>
+                            <li>
+                                <a href="" class="removeAnchor">
+                                    <i tabindex="0" class="far fa-times-circle fa-2x remove"></i>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

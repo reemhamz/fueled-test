@@ -3,12 +3,14 @@ const cart = {};
 
 // Function that removes items from the cart based on a click event listener. This will also later show the remaining total price even after items have been removed
 cart.removeItems = function () {
-    const removeButton = document.getElementsByClassName("remove");
+    const removeButton = document.getElementsByClassName("removeAnchor");
 
     for (let i = 0; i < removeButton.length; i++) {
         removeButton[i].addEventListener('click', function (e) {
+            e.preventDefault();
             const removeButtonClicked = e.target;
             removeButtonClicked.parentElement.parentElement.parentElement.remove()
+            
             cart.updateTotal();
         })
     }
@@ -92,12 +94,14 @@ cart.submitOrder = function () {
             const itemContainer = document.getElementsByClassName("cartItems")[0];
 
             // if statement to send alerts if button is clicked. If there is nothing in the cart and user clicks checkout, then an alert will appear saying there is nothing in the cart. However, if there are items in the cart, the order will be placed and the cart will empty
-            if (itemContainer.childNodes.length <= 0) {
-                alert("nothing here")
+            if (itemContainer.childElementCount === 0) {
+                alert("There is nothing in your cart!")
+                console.log("There is nothing in your cart!")
             } else {
-                while (itemContainer.hasChildNodes()) {
-                    itemContainer.removeChild(itemContainer.firstChild)
-                }
+                itemContainer.innerHTML = "";
+
+                alert("Your order has been placed!")
+                console.log("Your order has been placed!")
                 cart.updateTotal();
             }
         })

@@ -269,7 +269,7 @@ button {
   transition: 0.2s;
 }
 
-button:hover {
+button:hover, button:focus {
   background: #fff;
   color: #AE0000;
 }
@@ -279,7 +279,7 @@ a {
   transition: 0.2s;
 }
 
-a:hover {
+a:hover, a:focus {
   color: #AE0000;
 }
 
@@ -330,7 +330,7 @@ header .headerContent .cartQuantity {
   border-radius: 6px;
 }
 
-.cartBar {
+.cartBarContent {
   background: #0B0B0B;
   padding: 15px;
   border-radius: 6px;
@@ -406,7 +406,7 @@ header .headerContent .cartQuantity {
   transition: 0.2s;
 }
 
-.item i:hover {
+.item i:hover, .item i:focus {
   color: #AE0000;
 }
 
