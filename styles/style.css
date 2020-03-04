@@ -350,10 +350,7 @@ header .headerContent .cartQuantity {
 
 @media (max-width: 900px) {
   .cartBarContent {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 90%;
+    display: none;
   }
 }
 
@@ -409,14 +406,13 @@ header .headerContent .cartQuantity {
 
 @media (max-width: 900px) {
   .item ul {
-    width: 100%;
-  }
-  .item .itemName {
-    width: 150px;
-  }
-  .item .itemName img {
-    width: 70px;
-    height: 70px;
+    width: 95%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    height: 35vh;
+    margin: 10% 3%;
+    padding: 10px;
   }
 }
 
@@ -484,7 +480,6 @@ header .headerContent .cartQuantity {
   border: none;
   padding: 20px;
   color: rgba(255, 255, 255, 0.6);
-  margin: 0 40px;
 }
 
 @media (max-width: 950px) {

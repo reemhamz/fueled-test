@@ -20,9 +20,8 @@
     display: flex;
     justify-content: space-around;
     @include tablet{
-        
-        justify-content: space-between;
-        width: 90%;
+        // justify-content: space-between;
+        display: none;
     }
 }
 
@@ -51,6 +50,7 @@
             display: block;
         }
     }
+
     input{
         background: $black;
         color: $white;
@@ -65,14 +65,11 @@
 .item{
     @include tablet{
         ul{
-            width: 100%;
-        }
-        .itemName{
-            width: 150px;
-            img{
-                width: 70px;
-                height: 70px;
-            }
+            width: 95%;
+            align-items: flex-start;
+            height: 35vh;
+            margin: 10% 3%;
+            padding: 10px;
         }
     }
     @include smallTablet{
@@ -80,7 +77,6 @@
             flex-direction: column;
         }
     }
-    
 
 }
 
