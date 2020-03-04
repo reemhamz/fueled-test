@@ -7,13 +7,17 @@ cart.removeItems = function () {
 
     for (let i = 0; i < removeButton.length; i++) {
         removeButton[i].addEventListener('click', function (e) {
+
             e.preventDefault();
-            const removeButtonClicked = e.target;
-            removeButtonClicked.parentElement.parentElement.parentElement.remove()
-            
+            removeButtonClicked = e.target;
+
+            removeButtonClicked.parentElement.parentElement.parentElement.parentElement.remove();
+
             cart.updateTotal();
         })
+
     }
+
 }
 
 // Function containing math and document queries to update the DOM to show the quantities of items the user would like and how much the total cost would be
@@ -23,9 +27,13 @@ cart.updateTotal = function () {
     let totalPrice = 0
     for (let i = 0; i < itemRows.length; i++) {
         const itemRow = itemRows[i];
-        const itemPrice = parseInt(itemRow.getElementsByClassName("price")[0].innerText.replace('$', '').replace(',', ''));
-        let itemQty = itemRow.getElementsByClassName("itemQty")[0].value
+        const itemPrice = parseInt(itemRow.getElementsByClassName("price")[0].innerText.replace("$", "").replace(",", ""));
+        console.log(itemPrice)
+        // console.log(parseInt(itemRow.getElementsByClassName("price")[0].innerText.replace('$', '').replace(',', '')))
+
+        const itemQty = itemRow.getElementsByClassName("itemQty")[0].value
         totalPrice = totalPrice + (itemPrice * itemQty);
+
 
         // function to update quantity in the input field
         function updateQty() {
@@ -111,8 +119,8 @@ cart.submitOrder = function () {
 
 // start cart application
 cart.init = function () {
-    cart.updateTotal();
     cart.removeItems();
+    cart.updateTotal();
     cart.submitOrder();
 };
 
