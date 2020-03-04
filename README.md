@@ -19,7 +19,7 @@ Since this is a simple project, it is very simple to install -
 - Open up terminal / command line and go into the directory you'd wish to place the existing repo using the ``cd`` command
 - (Optional step: If you'd like to contribute to this repo, write ``git init`` to initialize folder)
 - Once you ``cd`` into your desired folder, write ``git clone https://github.com/reemhamz/fueled-test/``
-- This should glone and download the repo into your folder.
+- This should clone and download the repo into your folder.
 - Go into the repo folder that has just been cloned and open up ``index.html``
 
 To view the project online, go to https://reemhamz.github.io/fueled-test/
