@@ -1,6 +1,7 @@
 @import './setup';
 @import './colors';
 @import './fonts';
+@import './mixins';
 @import './header';
 @import './cart';
 @import './checkout';
@@ -17,6 +18,9 @@ body{
     max-width: 1380px;
     width: 90%;
     margin: 0 auto;
+    @include bigPhone{
+        width: 95%;
+    }
 }
 
 

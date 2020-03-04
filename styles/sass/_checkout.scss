@@ -2,8 +2,17 @@
     padding: 5% 0;
     display: flex;
     justify-content: space-between;
+    @include bigTablet{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        min-height: 100vh;
+        padding: 10%;
+    }
+}
+
+
     .comments{
-        width: 30%;
         h3{
             padding-bottom: 4%;
         }
@@ -14,8 +23,28 @@
         border: none;
         padding: 20px;
         color: $lightGrey;
+        margin: 0 40px;
+    
     }
+        @include bigTablet{
+            padding-bottom: 10%;
+            textarea{
+                width: 500px;
+            }
+        }
+        @include bigPhone{
+            textarea{
+                width: 400px;
+            }
+        }
+
+        @include smallPhone{
+            textarea{
+                width: 250px;
+            }
+        }
 }
+
 .deliveryInfo{
     width: 30%;
     h3{
@@ -23,6 +52,13 @@
     }
     p{
         color: $lightGrey;
+    }
+    @include bigTablet{
+        width: 80%;
+        padding-bottom: 10%;
+    }
+    @include bigPhone{
+        width: 100%;
     }
 }
 
@@ -44,5 +80,14 @@
         background: $black;
         border-radius: 6px;
     }
+    @include bigTablet{
+        width: 80%;
+        .total, button{
+            margin-bottom: 5%;
+        }
+    }
+    @include bigPhone{
+        width: 100%;
+    }
 }
-}
+
