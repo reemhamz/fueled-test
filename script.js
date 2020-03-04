@@ -6,7 +6,7 @@ cart.removeItems = function () {
     const removeButton = document.getElementsByClassName("remove");
 
     for (let i = 0; i < removeButton.length; i++) {
-        removeButton[i].addEventListener('click', function (e) {
+        removeButton[i].addEventListener("click", function (e) {
 
             e.preventDefault();
             removeButtonClicked = e.target;
@@ -17,7 +17,7 @@ cart.removeItems = function () {
         })
 
 
-        removeButton[i].addEventListener('keypress', function (e) {
+        removeButton[i].addEventListener("keypress", function (e) {
             
                 if (e.key == "Enter" || e.keyCode == 13) {
                     e.preventDefault();
@@ -109,7 +109,7 @@ cart.submitOrder = function () {
     function clickSubmit() {
 
         const submitClicked = document.getElementById("submit");
-        submitClicked.addEventListener('click', function (e) {
+        submitClicked.addEventListener("click", function (e) {
             e.preventDefault();
 
             const itemContainer = document.getElementsByClassName("cartItems")[0];
