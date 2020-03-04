@@ -81,7 +81,7 @@ cart.updateTotal = function () {
 
 // function that handles the checkout button
 cart.submitOrder = function () {
-    const totalPrice = document.getElementsByClassName("totalPrice")[0].innerHTML;
+
 
     function clickSubmit() {
 
@@ -90,11 +90,16 @@ cart.submitOrder = function () {
             e.preventDefault();
 
             const itemContainer = document.getElementsByClassName("cartItems")[0];
-            while (itemContainer.hasChildNodes()) {
-                itemContainer.removeChild(itemContainer.firstChild)
+
+            // if statement to send alerts if button is clicked. If there is nothing in the cart and user clicks checkout, then an alert will appear saying there is nothing in the cart. However, if there are items in the cart, the order will be placed and the cart will empty
+            if (itemContainer.childNodes.length <= 0) {
+                alert("nothing here")
+            } else {
+                while (itemContainer.hasChildNodes()) {
+                    itemContainer.removeChild(itemContainer.firstChild)
+                }
+                cart.updateTotal();
             }
-            console.log("Your order has been placed")
-            cart.updateTotal();
         })
     }
     clickSubmit();
