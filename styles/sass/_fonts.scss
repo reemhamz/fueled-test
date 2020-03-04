@@ -12,12 +12,7 @@ a {
     color: $white;
 }
 
-p, span, ul, li, label, h4{
-    font-size: 1.6rem;
-    @include tablet{
-        font-size: 1.4rem;
-    }
-}
+
 
 label, textarea, form, input{
     color: $white;
@@ -64,7 +59,12 @@ h4{
     font-weight: 400;
 }
 
-
+p, span, ul, li, label, h4{
+    font-size: 1.6rem;
+    @include tablet{
+        font-size: 1.4rem;
+    }
+}
 
 
 ul{

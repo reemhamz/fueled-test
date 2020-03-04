@@ -193,16 +193,6 @@ a {
   color: #fff;
 }
 
-p, span, ul, li, label, h4 {
-  font-size: 1.6rem;
-}
-
-@media (max-width: 900px) {
-  p, span, ul, li, label, h4 {
-    font-size: 1.4rem;
-  }
-}
-
 label, textarea, form, input {
   color: #fff;
   font-size: 1.6rem;
@@ -250,6 +240,16 @@ h3 {
 
 h4 {
   font-weight: 400;
+}
+
+p, span, ul, li, label, h4 {
+  font-size: 1.6rem;
+}
+
+@media (max-width: 900px) {
+  p, span, ul, li, label, h4 {
+    font-size: 1.4rem;
+  }
 }
 
 ul {
