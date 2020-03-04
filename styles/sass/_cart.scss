@@ -19,6 +19,11 @@
     border-radius: 6px;
     display: flex;
     justify-content: space-around;
+    @include tablet{
+        
+        justify-content: space-between;
+        width: 90%;
+    }
 }
 
 // Styling for items in cart
@@ -56,6 +61,29 @@
         width: 50px;
     }
 }
+
+.item{
+    @include tablet{
+        ul{
+            width: 100%;
+        }
+        .itemName{
+            width: 150px;
+            img{
+                width: 70px;
+                height: 70px;
+            }
+        }
+    }
+    @include smallTablet{
+        ul{
+            flex-direction: column;
+        }
+    }
+    
+
+}
+
 
 .itemTwo{
     background: $black;

@@ -4,6 +4,18 @@
     }
 }
 
+@mixin tablet{
+    @media(max-width: 900px){
+        @content;
+    }
+}
+
+@mixin smallTablet{
+    @media(max-width: 660px){
+        @content;
+    }
+}
+
 
 @mixin bigPhone{
     @media (max-width: 565px){
