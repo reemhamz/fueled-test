@@ -1,4 +1,4 @@
-# fueled-test
+# herbalove-shoppe
 
 Concept:
 Create functional shopping cart that updates prices based on quantity and removal of items
