@@ -32,10 +32,6 @@ header{
         letter-spacing: 0.09em;
         align-self: center;
         font-family: $DMSerif;
-        span{
-            font-weight: 900;
-            font-size: 1.8rem; 
-        }
 }
         #quantity{
             background: $white;
@@ -44,7 +40,17 @@ header{
             border-radius: 100%;
             text-align: center;
             width: 40px;
-        
+    }
+     @include tablet{
+        h1 {
+            font-size: 3rem !important;
+            // align-self: flex-start;
+            margin-bottom: 5px;
+        }
+
+        #quantity {
+            margin-top: 5px;
+        }
     }
 }
 
