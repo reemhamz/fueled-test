@@ -1,12 +1,13 @@
 header{
-    background: $red;
+    background: $darkTeal;
     padding: 20px 0;
     .headerContent{
         display: flex;
         justify-content: space-between;
         .cartQuantity{
             display: flex;
-            width: 80px;
+            width: 90px;
+            
             justify-content: space-between;
             align-items: center;
         }

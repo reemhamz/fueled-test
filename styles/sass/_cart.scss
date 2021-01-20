@@ -5,22 +5,26 @@
         padding: 5% 0;
         p{
             height: 47px;
-            background: $black;
+            background: $darkTeal;
             padding: 15px;
             border-radius: 6px;
+            color: $white;
             
         }
     }
 
 
 .cartBarContent{
-    background: $black;
+    background: $darkTeal;
     padding: 15px;
     border-radius: 6px;
     display: flex;
     justify-content: space-around;
+    li{
+        color: white;
+        text-transform: uppercase;
+    }
     @include tablet{
-        // justify-content: space-between;
         display: none;
     }
 }
@@ -37,7 +41,7 @@
             width: 60px;
         }
         p{
-            color: $lightGrey;
+            color: $darkTeal;
         }
     }
     .itemName{
@@ -48,12 +52,15 @@
         img{
             border-radius: 6px;
             display: block;
+            height: 150px;
+            width: 150px;
+            object-fit: cover;
         }
     }
 
     input{
-        background: $black;
-        color: $white;
+        background: $lightTeal;
+        color: $darkGrey;
         border: none;
         text-align: center;
         border-radius: 6px;
@@ -81,10 +88,10 @@
 }
 
 .itemTwo{
-    background: $black;
+    background: $lightTeal;
     border-radius: 6px;
     input{
-        background: $darkGrey;
+        background: $white;
     }
 }
 
@@ -93,7 +100,7 @@
         cursor: pointer;
         transition: 0.2s;
         &:hover, &:focus{
-            color: $red;
+            color: $darkTeal;
         }
     }
 }

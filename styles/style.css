@@ -189,23 +189,25 @@ span,
 a {
   padding: 0;
   margin: 0;
-  font-family: "SF Pro Text", Arial, Helvetica, sans-serif;
-  color: #fff;
+  font-family: "Cairo", sans-serif;
+  color: #0B0B0B;
 }
 
 label, textarea, form, input {
-  color: #fff;
+  color: #0B0B0B;
   font-size: 1.6rem;
 }
 
 header h1 {
-  font-size: 1.8rem !important;
-  text-transform: uppercase;
+  font-size: 4rem !important;
+  border-bottom: 2px dashed #fff;
+  color: #fff;
   font-weight: 300;
   letter-spacing: 0.09em;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  font-family: "DM Serif Display", serif;
 }
 
 header h1 span {
@@ -219,7 +221,7 @@ header #quantity {
   padding: 5px;
   border-radius: 100%;
   text-align: center;
-  width: 30px;
+  width: 40px;
 }
 
 h2 {
@@ -265,7 +267,7 @@ ul, li {
 
 button {
   font-size: 1.8rem;
-  background: #AE0000;
+  background: #178082;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -278,7 +280,9 @@ button {
 
 button:hover, button:focus {
   background: #fff;
-  color: #AE0000;
+  color: #178082;
+  border: 2px dashed #178082;
+  background: transparent;
 }
 
 a {
@@ -287,11 +291,11 @@ a {
 }
 
 a:hover, a:focus {
-  color: #AE0000;
+  color: #178082;
 }
 
 header {
-  background: #AE0000;
+  background: #178082;
   padding: 20px 0;
 }
 
@@ -308,7 +312,7 @@ header .headerContent .cartQuantity {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80px;
+  width: 90px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -345,13 +349,14 @@ header .headerContent .cartQuantity {
 
 .cartHead p {
   height: 47px;
-  background: #0B0B0B;
+  background: #178082;
   padding: 15px;
   border-radius: 6px;
+  color: #fff;
 }
 
 .cartBarContent {
-  background: #0B0B0B;
+  background: #178082;
   padding: 15px;
   border-radius: 6px;
   display: -webkit-box;
@@ -359,6 +364,11 @@ header .headerContent .cartQuantity {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+.cartBarContent li {
+  color: white;
+  text-transform: uppercase;
 }
 
 @media (max-width: 900px) {
@@ -386,7 +396,7 @@ header .headerContent .cartQuantity {
 }
 
 .item ul p {
-  color: rgba(255, 255, 255, 0.6);
+  color: #178082;
 }
 
 .item .itemName {
@@ -405,11 +415,15 @@ header .headerContent .cartQuantity {
 .item .itemName img {
   border-radius: 6px;
   display: block;
+  height: 150px;
+  width: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .item input {
-  background: #0B0B0B;
-  color: #fff;
+  background: #D3F2ED;
+  color: #2C2C2C;
   border: none;
   text-align: center;
   border-radius: 6px;
@@ -439,12 +453,12 @@ header .headerContent .cartQuantity {
 }
 
 .itemTwo {
-  background: #0B0B0B;
+  background: #D3F2ED;
   border-radius: 6px;
 }
 
 .itemTwo input {
-  background: #2C2C2C;
+  background: #fff;
 }
 
 .item i {
@@ -454,7 +468,7 @@ header .headerContent .cartQuantity {
 }
 
 .item i:hover, .item i:focus {
-  color: #AE0000;
+  color: #178082;
 }
 
 .checkout {
@@ -487,12 +501,12 @@ header .headerContent .cartQuantity {
 }
 
 .comments textarea {
-  background: #0B0B0B;
+  background: #178082;
   border-radius: 6px;
   resize: none;
   border: none;
   padding: 20px;
-  color: rgba(255, 255, 255, 0.6);
+  color: #fff;
 }
 
 @media (max-width: 950px) {
@@ -525,7 +539,7 @@ header .headerContent .cartQuantity {
 }
 
 .deliveryInfo p {
-  color: rgba(255, 255, 255, 0.6);
+  color: #2C2C2C;
 }
 
 @media (max-width: 950px) {
@@ -577,7 +591,7 @@ header .headerContent .cartQuantity {
 }
 
 .checkoutPay .total {
-  background: #0B0B0B;
+  background: #D3F2ED;
   border-radius: 6px;
 }
 
@@ -601,7 +615,7 @@ html {
 }
 
 body {
-  background: #2C2C2C;
+  background: #fff;
 }
 
 .wrapper {
