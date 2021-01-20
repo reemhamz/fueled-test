@@ -11,4 +11,4 @@ Method of code:
 - For mobile design: I looked into eBay and Amazon to see how their shopping carts were designed and did something similar, so I decided to remove the product information bar since there was almost no need for it on mobile.
 - For font styling, it is encouraged to use either EM or REM for sizing rather than pixels, so I stuck with REM and defined the HTML body to have a font-size of 62.5% in order for me to easily calculate REM while referring to Figma design mockup.
 
-To view the project online, go to https://reemhamz.github.io/fueled-test/
+To view the project online, go to https://reemhamz.github.io/herbalove-shoppe/
